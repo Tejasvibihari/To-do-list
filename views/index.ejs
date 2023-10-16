@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="container h">
+        <div class="list">
+            <% if (locals.titleoflist && locals.listofitem) { %>
+
+                <ul type="none">
+                    <% titleoflist.forEach(element=> { %>
+                        <input type="checkbox" class="strikethrough">
+                        <li>
+                            <%= element %>
+                        </li>
+                        <br>
+                        <hr>
+                        <% }) %>
+                </ul>
+                <% } %>
+                    <div class="to-do-form">
+                        <form action="/" method="POST">
+                            <input name="listTitle" type="text" placeholder="Title">
+                            <input name="listItem" type="text" placeholder="Description">
+                            <button type="submit"><i class="fa-solid fa-plus" style="color: azure;"></i></button>
+                        </form>
+                    </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
