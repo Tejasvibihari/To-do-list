@@ -2,13 +2,19 @@
 
     <div class="container h">
         <div class="list">
-            <% if (locals.titleoflist && locals.listofitem) { %>
+            <% if (locals.titleoflist) { %>
 
                 <ul type="none">
                     <% titleoflist.forEach(element=> { %>
                         <input type="checkbox" class="strikethrough">
                         <li>
-                            <%= element %>
+                            <%= element.title %>
+                                <!-- <ul>
+                                    <li>
+                                        <hr>
+                                        <%#  element.description %> %>
+                                    </li>
+                                </ul> -->
                         </li>
                         <br>
                         <hr>
@@ -18,7 +24,7 @@
                     <div class="to-do-form">
                         <form action="/" method="POST">
                             <input name="listTitle" type="text" placeholder="Title">
-                            <input name="listItem" type="text" placeholder="Description">
+                            <!-- <input name="listItem" type="text" placeholder="Description"> -->
                             <button type="submit"><i class="fa-solid fa-plus" style="color: azure;"></i></button>
                         </form>
                     </div>
